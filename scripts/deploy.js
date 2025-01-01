@@ -1,7 +1,5 @@
-// require('dotenv').config();
-// const hre = require('hardhat');
-
-const ICONTRACTADDRESS = "0x890697B6bf90eA125D2Bc3B7B4F5AB2ec610C373";
+// contract address of the target contract
+const ICONTRACT_ADDRESS = "0x890697B6bf90eA125D2Bc3B7B4F5AB2ec610C373";
 
 // async function main() {
 //   const Contract = await hre.ethers.getContractFactory("Contract")
@@ -30,7 +28,7 @@ async function main() {
   // Create an instance of a Faucet Factory
   let factory = new ethers.ContractFactory(artifacts.abi, artifacts.bytecode, wallet);
 
-  let contract = await factory.deploy(ICONTRACTADDRESS);
+  let contract = await factory.deploy(ICONTRACT_ADDRESS);
 
   console.log("Contract address:", contract.address);
 
